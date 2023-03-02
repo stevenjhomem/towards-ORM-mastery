@@ -11,17 +11,18 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 from pathlib import Path
 
+SECRET_KEY = 'abcd'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'django_project_root/static/'
+STATIC_ROOT = BASE_DIR / 'mastering_django_orm/static/'
 
 # Media Files
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'django_project_root/media/'
-
+MEDIA_ROOT = BASE_DIR / 'mastering_django_orm/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mastering_django_orm.book_records'
 ]
 
 MIDDLEWARE = [
@@ -58,7 +60,7 @@ ROOT_URLCONF = 'configuration_root.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'django_project_root/templates/', ],
+        'DIRS': [BASE_DIR / 'mastering_django_orm/templates/', ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,6 +1,5 @@
 from django.apps import AppConfig
 
-
 class DjangoProjectRootConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'app_1'
+    name = 'mastering_django_orm.book_records'

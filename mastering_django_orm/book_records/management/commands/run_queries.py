@@ -11,10 +11,11 @@ from mastering_django_orm.book_records.models import Book, Publisher, Author
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
-        def print_sql(queryset: QuerySet):
-            formatted = sqlparse.format(str(queryset.query), reindent=True)
-            print(highlight(formatted, PostgresLexer(), TerminalFormatter()))
 
         qs_1 = Book.objects.all()
 
-        return print_sql(qs_1)
+        return self.print_sql(qs_1)
+
+    def print_sql(self, queryset: QuerySet):
+        formatted = sqlparse.format(str(queryset.query), reindent=True)
+        print(highlight(formatted, PostgresLexer(), TerminalFormatter()))

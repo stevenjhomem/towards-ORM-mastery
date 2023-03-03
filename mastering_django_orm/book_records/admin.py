@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from mastering_django_orm.book_records.models import Author, Books, Publisher
+from mastering_django_orm.book_records.models import Author, Book, Publisher
 
 
 @admin.register(Author)
@@ -19,9 +19,9 @@ class AuthorAdmin(admin.ModelAdmin):
     ]
 
 
-@admin.register(Books)
+@admin.register(Book)
 class BookAdmin(admin.ModelAdmin):
-    model = Books
+    model = Book
     list_display = [
         'id',
         'title',
@@ -40,7 +40,6 @@ class PublisherAdmin(admin.ModelAdmin):
         'id',
         'first_name',
         'last_name',
-        'recommended_by',
         'join_date',
         'popularity_score',
     ]

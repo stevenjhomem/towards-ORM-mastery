@@ -38,4 +38,4 @@ class BookFactory(DjangoModelFactory):
     price = factory.Faker('pyfloat', left_digits=2, min_value=5.00, max_value=25.00)
     published_date = factory.Faker('date_between', start_date=datetime.now() - timedelta(days=5475))
     author = factory.SubFactory(AuthorFactory)
-    publisher = factory.SubFactory(PublisherFactory)
+    publisher = factory.Iterator(Publisher.objects.all())
